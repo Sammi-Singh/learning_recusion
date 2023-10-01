@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void permut(int ind, vector<int> &num, vector<vector<int>> &ans)
+void permutation(int ind, vector<int> &num, vector<vector<int>> &ans)
 {
     if (ind == num.size())
     {
@@ -12,7 +12,7 @@ void permut(int ind, vector<int> &num, vector<vector<int>> &ans)
     for (int i = ind; i < num.size(); i++)
     {
         swap(num[i], num[ind]);
-        permut(ind + 1, num, ans);
+        permutation(ind + 1, num, ans);
         swap(num[i], num[ind]);
     }
 }
@@ -28,7 +28,7 @@ int main()
         cin >> num[i];
     }
     vector<vector<int>> ans;
-    permut(0, num, ans);
+    permutation(0, num, ans);
 
     for (auto it : ans)
     {
